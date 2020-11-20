@@ -3,102 +3,106 @@ using namespace std;
 
 class Weapon {
 	private:
+		string Name; //Nombre del Arma
 		string Elem; //Elemento del Arma
 		string Type; //Tipo de Arma (Espada, Pistola, Lanza...)
-		string TypeReq; //Atributo Requerido (Melee, Ranged, Technique, Dexterity)
+		string TypeReq; //Atributo Requerido (Melee (Mel), Ranged (Rng), Technique (Tec), Dexterity (Dex))
 		string StatReq; //Característica Requerida (Atk, Def, Dex no tiene)
 		int Rarity; //Rareza en Estrellas (De 1 a 15)
-		int Req; //Valor del Requisito (Desconozco el límite pero esta por encima de 2000)
-		int MainAtk; //Valor de Ataque del tipo de Atributo principal	
+		int Req; //Valor del Requisito (Limite de 1 a 1000)
+		int MainAtk; //Valor de Ataque del tipo de Atributo principal
 	public:
-		Weapon(): Elem(""),Type("Espada"),TypeReq("Melee"),StatReq("Atk"),Rarity(1),Req(1),MainAtk(1){}; //Default
-		string set_Elem(string Elemento);
+		Weapon();
+		Weapon(string n, string el, string tw, string tr, string sr, int r,
+		  int rq, int a): Name(n), Elem(el), Type(tw), TypeReq(tr),
+		  StatReq(sr), Rarity(r), Req(rq), MainAtk(a){};
+		string get_Name();
 		string get_Elem();
-		string set_Type(string TipoArma);
 		string get_Type();
-		string set_TypeReq(string TipoRequisito);
 		string get_TypeReq();
-		string set_StatReq(string Requisito);
 		string get_StatReq();
-		int set_Rarity(int Rareza);
 		int get_Rarity();
-		int set_Req(int ValorRequisito);
 		int get_Req();
-		int set_MainAtk(int Ataque);
-		int get_MainAtk();	
+		int get_MainAtk();
+		void set_Name(string);
+		void set_Elem(string);
+		void set_Type(string);
+		void set_TypeReq(string);
+		void set_StatReq(string);
+		void set_Rarity(int);
+		void set_Req(int);
+		void set_MainAtk(int);
 };
 
-string Weapon::set_Elem(string Elemento) {
-	string Elemento;
-	cout << "Elemento del arma" << endl;
-	cin >> Elemento;
-	Elem = Elemento;
+Weapon::Weapon(){ //Default
+	Name = "Sword";
+	Elem = "";
+	Type = "Sword";
+	TypeReq = "Mel";
+	StatReq = "Atk";
+	Rarity = 1;
+	Req = 1;
+	MainAtk = 1;
 };
+
+string Weapon::get_Name(){
+	return Name;
+}
 
 string Weapon::get_Elem() {
 	return Elem;
-};
-
-string Weapon::set_Type(string TipoArma) {
-	string TipoArma;
-	cout << "Tipo de arma" << endl;
-	cin >> TipoArma;
-	Type = TipoArma;
 };
 
 string Weapon::get_Type() {
 	return Type;
 };
 
-string Weapon::set_TypeReq(string TipoRequisito) {
-	string TipoRequisito;
-	cout << "Atributo Requerido" << endl;
-	cin >> TipoRequisito;
-	TypeReq = TipoRequisito;
-};
-
 string Weapon::get_TypeReq() {
 	return TypeReq;
 };
-
-string Weapon::set_StatReq(string Requisito) {
-	string Requisito;
-	cout << "Característica Requerida" << endl;
-	cin >> Requisito;
-	StatReq = Requisito;
-};
-
 string Weapon::get_StatReq() {
 	return StatReq;
-};
-
-int Weapon::set_Rarity(int Rareza) {
-	int Rareza;
-	cout << "Rareza del arma" << endl;
-	cin >> Rareza;
-	Rarity = Rareza
 };
 
 int Weapon::get_Rarity() {
 	return Rarity;
 };
 
-int Weapon::set_Req(int ValorRequisito) {
-	cout << "Valor del Requisito" << endl;
-	cin >> ValorRequisito;
-};
-
 int Weapon::get_Req() {
-	Req = ValorRequisito;
-	return Req
-};
-
-int Weapon::set_MainAtk(int Ataque) {
-	cout << "Valor de Ataque principal" << endl;
-	cin >> Ataque;
-	MainAtk = Ataque;
+	return Req;
 };
 
 int Weapon::get_MainAtk() {
-	return MainAtk
+	return MainAtk;
+};
+
+void Weapon::set_Name(string n){
+	Name = n;
+};
+
+void Weapon::set_Elem(string el) {
+	Elem = el;
+};
+
+void Weapon::set_Type(string tw) {
+	Type = tw;
+};
+
+void Weapon::set_TypeReq(string tr) {
+	TypeReq = tr;
+};
+
+void Weapon::set_StatReq(string sr) {
+	StatReq = sr;
+};
+
+void Weapon::set_Rarity(int r) {
+	Rarity = r;
+};
+void Weapon::set_Req(int rq) {
+	Req = rq;
+};
+
+void Weapon::set_MainAtk(int a) {
+	MainAtk = a;
 };
