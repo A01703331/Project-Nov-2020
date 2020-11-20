@@ -12,10 +12,11 @@ class Weapon {
 		int Req; //Valor del Requisito (Limite de 1 a 1000)
 		int MainAtk; //Valor de Ataque del tipo de Atributo principal
 	public:
-		Weapon();
+		Weapon(); //Llama al default
 		Weapon(string n, string el, string tw, string tr, string sr, int r,
 		  int rq, int a): Name(n), Elem(el), Type(tw), TypeReq(tr),
-		  StatReq(sr), Rarity(r), Req(rq), MainAtk(a){};
+		  StatReq(sr), Rarity(r), Req(rq), MainAtk(a){}; //Integra los valores que se pongan al momento de definir el arma
+		//getters
 		string get_Name();
 		string get_Elem();
 		string get_Type();
@@ -24,6 +25,7 @@ class Weapon {
 		int get_Rarity();
 		int get_Req();
 		int get_MainAtk();
+		//setters
 		void set_Name(string);
 		void set_Elem(string);
 		void set_Type(string);
@@ -45,64 +47,68 @@ Weapon::Weapon(){ //Default
 	MainAtk = 1;
 };
 
-string Weapon::get_Name(){
+//Funciones de getters
+
+string Weapon::get_Name(){ //Regresa el nombre
 	return Name;
 }
 
-string Weapon::get_Elem() {
+string Weapon::get_Elem() { //Regresa el elemento
 	return Elem;
 };
 
-string Weapon::get_Type() {
+string Weapon::get_Type() { //Regresa el tipo de arma
 	return Type;
 };
 
-string Weapon::get_TypeReq() {
+string Weapon::get_TypeReq() { //Regresa el tipo de atributo requerido
 	return TypeReq;
 };
-string Weapon::get_StatReq() {
+string Weapon::get_StatReq() { //Regresa la característica requerida
 	return StatReq;
 };
 
-int Weapon::get_Rarity() {
+int Weapon::get_Rarity() { //Regresa la rareza
 	return Rarity;
 };
 
-int Weapon::get_Req() {
+int Weapon::get_Req() { //Regresa el valor de la característica requerida (Mel Atk, Rng Atk, Dex, etc.)
 	return Req;
 };
 
-int Weapon::get_MainAtk() {
+int Weapon::get_MainAtk() { //Regresa el valor de ataque del arma
 	return MainAtk;
 };
 
-void Weapon::set_Name(string n){
+//Funciones de setters
+
+void Weapon::set_Name(string n){ //Cambia el nombre
 	Name = n;
 };
 
-void Weapon::set_Elem(string el) {
+void Weapon::set_Elem(string el) { //Cambia el elemento
 	Elem = el;
 };
 
-void Weapon::set_Type(string tw) {
+void Weapon::set_Type(string tw) { //Cambia el tipo de arma
 	Type = tw;
 };
 
-void Weapon::set_TypeReq(string tr) {
+void Weapon::set_TypeReq(string tr) { //Cambia el tipo de atributo requrido
 	TypeReq = tr;
 };
 
-void Weapon::set_StatReq(string sr) {
+void Weapon::set_StatReq(string sr) { //Cambia la característica requerida
 	StatReq = sr;
 };
 
-void Weapon::set_Rarity(int r) {
+void Weapon::set_Rarity(int r) { //Cambia la rareza
 	Rarity = r;
 };
-void Weapon::set_Req(int rq) {
+void Weapon::set_Req(int rq) { //Cambia el valor de la caracterpistica requerida
 	Req = rq;
 };
 
-void Weapon::set_MainAtk(int a) {
+void Weapon::set_MainAtk(int a) { //Cambia el valor de ataque del arma
 	MainAtk = a;
 };

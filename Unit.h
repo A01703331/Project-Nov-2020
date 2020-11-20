@@ -10,15 +10,17 @@ class Unit {
 		int Req; //Valor del Requisito (Límite de 1 a 1000)
 		int MainDef; //Valor de Defensa del tipo de Atributo principal	
 	public:
-		Unit();
+		Unit(); //Llama al Default
 		Unit(string p, string tr, string sr, int r, int rq, int d):
-		  Part(p), TypeReq(tr), StatReq(sr), Rarity(r), Req(rq), MainDef(d){};
+		  Part(p), TypeReq(tr), StatReq(sr), Rarity(r), Req(rq), MainDef(d){}; //Integra los valores que se pongan al momento de definir la unidad
+		//getters
 		string get_Part();
 		string get_TypeReq();
 		string get_StatReq();
 		int get_Rarity();
 		int get_Req();
 		int get_MainDef();
+		//setters
 		void set_Part(string);
 		void set_TypeReq(string);
 		void set_StatReq(string);
@@ -35,6 +37,8 @@ Unit::Unit(){ //Default
 	Req = 1;
 	MainDef = 1;
 };
+
+//Funciones de getters
 
 string Unit::get_Part() {
 	return Part;
@@ -59,6 +63,8 @@ int Unit::get_Req() {
 int Unit::get_MainDef() {
 	return MainDef;
 };
+
+//Funciones de setters
 
 void Unit::set_Part(string p){
 	Part = p;

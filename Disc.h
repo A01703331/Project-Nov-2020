@@ -10,14 +10,17 @@ class Disc {
 		int Lvl; //Nivel de la Habilidad
 		bool Custom; //Si el disco es customizado o no
 	public:
-		Disc();
-		Disc(string n, string s, string sr, int rq, int lv, bool c): Name(n), Skill(s), StatReq(sr), Req(rq), Lvl(lv), Custom(c){};
+		Disc(); //Llama al Default
+		Disc(string n, string s, string sr, int rq, int lv, bool c): Name(n), Skill(s),
+		  StatReq(sr), Req(rq), Lvl(lv), Custom(c){}; //Integra los valores que se pongan al momento de definir el disco
+		//getters
 		string get_Name();
 		string get_Skill();
 		string get_StatReq();
 		int get_Req();
 		int get_Lvl();
 		bool get_Custom();
+		//setters
 		void set_Name(string);
 		void set_Skill(string);
 		void set_StatReq(string);
@@ -34,6 +37,8 @@ Disc::Disc(){ //Default
 	Lvl = 1;
 	Custom = 0;
 };
+
+//Funciones de getters
 
 string Disc::get_Name(){
 	return Name;
@@ -58,6 +63,8 @@ int Disc::get_Lvl(){
 bool Disc::get_Custom(){
 	return Custom;
 };
+
+//Funciones de setters
 
 void Disc::set_Name(string n){
 	Name = n;
