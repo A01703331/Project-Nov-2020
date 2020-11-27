@@ -8,25 +8,25 @@ class Unit {
 		string StatReq; //Característica Requerida (Atk, Def, Dex no tiene)
 		int Rarity; //Rareza en Estrellas (De 1 a 15)
 		int Req; //Valor del Requisito (Límite de 1 a 1000)
-		int MainDef; //Valor de Defensa del tipo de Atributo principal	
+		int MainStat; //Valor de la caracteristica principal	
 	public:
 		Unit(); //Llama al Default
 		Unit(string p, string tr, string sr, int r, int rq, int d):
-		  Part(p), TypeReq(tr), StatReq(sr), Rarity(r), Req(rq), MainDef(d){}; //Integra los valores que se pongan al momento de definir la unidad
+		  Part(p), TypeReq(tr), StatReq(sr), Rarity(r), Req(rq), MainStat(d){}; //Integra los valores que se pongan al momento de definir la unidad
 		//getters
 		string get_Part();
 		string get_TypeReq();
 		string get_StatReq();
 		int get_Rarity();
 		int get_Req();
-		int get_MainDef();
+		int get_MainStat();
 		//setters
 		void set_Part(string);
 		void set_TypeReq(string);
 		void set_StatReq(string);
 		void set_Rarity(int);
 		void set_Req(int);
-		void set_MainDef(int);
+		void set_MainStat(int);
 };
 
 Unit::Unit(){ //Default
@@ -35,7 +35,7 @@ Unit::Unit(){ //Default
 	StatReq = "Atk";
 	Rarity = 1;
 	Req = 1;
-	MainDef = 1;
+	MainStat = 1;
 };
 
 //Funciones de getters
@@ -60,8 +60,8 @@ int Unit::get_Req() {
 	return Req;
 };
 
-int Unit::get_MainDef() {
-	return MainDef;
+int Unit::get_MainStat() {
+	return MainStat;
 };
 
 //Funciones de setters
@@ -86,6 +86,6 @@ void Unit::set_Req(int rq) {
 	Req = rq;
 };
 
-void Unit::set_MainDef(int d) {
-	MainDef = d;
+void Unit::set_MainStat(int d) {
+	MainStat = d;
 };

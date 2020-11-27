@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-class Weapon {
+class Weapon  {
 	private:
 		string Name; //Nombre del Arma
 		string Elem; //Elemento del Arma
@@ -10,12 +10,12 @@ class Weapon {
 		string StatReq; //Característica Requerida (Atk, Def, Dex no tiene)
 		int Rarity; //Rareza en Estrellas (De 1 a 15)
 		int Req; //Valor del Requisito (Limite de 1 a 1000)
-		int MainAtk; //Valor de Ataque del tipo de Atributo principal
+		int MainStat; //Valor de la caracteristica principal
 	public:
 		Weapon(); //Llama al default
 		Weapon(string n, string el, string tw, string tr, string sr, int r,
 		  int rq, int a): Name(n), Elem(el), Type(tw), TypeReq(tr),
-		  StatReq(sr), Rarity(r), Req(rq), MainAtk(a){}; //Integra los valores que se pongan al momento de definir el arma
+		  StatReq(sr), Rarity(r), Req(rq), MainStat(a){}; //Integra los valores que se pongan al momento de definir el arma
 		//getters
 		string get_Name();
 		string get_Elem();
@@ -24,7 +24,7 @@ class Weapon {
 		string get_StatReq();
 		int get_Rarity();
 		int get_Req();
-		int get_MainAtk();
+		int get_MainStat();
 		//setters
 		void set_Name(string);
 		void set_Elem(string);
@@ -33,7 +33,7 @@ class Weapon {
 		void set_StatReq(string);
 		void set_Rarity(int);
 		void set_Req(int);
-		void set_MainAtk(int);
+		void set_MainStat(int);
 };
 
 Weapon::Weapon(){ //Default
@@ -44,7 +44,7 @@ Weapon::Weapon(){ //Default
 	StatReq = "Atk";
 	Rarity = 1;
 	Req = 1;
-	MainAtk = 1;
+	MainStat = 1;
 };
 
 //Funciones de getters
@@ -76,8 +76,8 @@ int Weapon::get_Req() { //Regresa el valor de la característica requerida (Mel A
 	return Req;
 };
 
-int Weapon::get_MainAtk() { //Regresa el valor de ataque del arma
-	return MainAtk;
+int Weapon::get_MainStat() { //Regresa el valor de ataque del arma
+	return MainStat;
 };
 
 //Funciones de setters
@@ -109,6 +109,6 @@ void Weapon::set_Req(int rq) { //Cambia el valor de la caracterpistica requerida
 	Req = rq;
 };
 
-void Weapon::set_MainAtk(int a) { //Cambia el valor de ataque del arma
-	MainAtk = a;
+void Weapon::set_MainStat(int a) { //Cambia el valor de ataque del arma
+	MainStat = a;
 };
