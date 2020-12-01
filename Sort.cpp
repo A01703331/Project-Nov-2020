@@ -3,22 +3,22 @@
 // Un sorteador de un inventario de Phantasy Star Online 2
 
 #include <iostream>
-#include "Weapon.h"
-#include "Unit.h"
-#include "Consumable.h"
-#include "Disc.h"
+#include "Weapon.hpp"
+#include "Unit.hpp"
+#include "Consumable.hpp"
+#include "Disc.hpp"
 using namespace std;
 
 int main(int argc, char** argv) {
 	Weapon AlbaSword; //Crea un arma
-	AlbaSword.set_Elem("Fire"); //Cambia el elemento del arma a fuego
-	cout << AlbaSword.get_Elem() << endl; //Muestra el elemento al usuario
+	AlbaSword.set_elem("Fire"); //Cambia el elemento del arma a fuego
+	cout << AlbaSword.get_elem() << endl; //Muestra el elemento al usuario
 	Unit BackHelio; // Crea una unidad de armadura con los valores default
-	cout << BackHelio.get_Rarity() << " " << BackHelio.get_Part() << " " << BackHelio.get_StatReq() << endl; //Muestra la rareza y el tipo de armadura al usuario
-	Consumable Trimate("Trimate","Healing",100); //Crea un objeto de curación y sus atributos
-	cout << Trimate.get_Type() << " " << Trimate.get_Effect() << endl; //Muestra al usuario que tipo de objeto consumible es, y el porcentaje de efecto de este
-	EmoAcc ArksDance("Arks Dance","Emote", 0, 27, 1, 1); //Crea un emote, subclase de consumible, y sus atributos
-	cout << ArksDance.get_Type() << " " << ArksDance.get_ID() << endl; //Muestra el tipo de consumible, y su ID de Emote
-	Disc SonicArrow("Sonic Arrow","Mel","Atk",30,5,0); //Crea un Disco de Arte de Fotón, sus requisitos de uso, y su nivel
-	cout << SonicArrow.get_Name() << " Level " << SonicArrow.get_Lvl() << endl; //Muestra al usuario el nombre del Arte de Fotón, y su nivel
+	cout << BackHelio.get_rarity() << " " << BackHelio.get_part() << " " << BackHelio.get_stat_req() << endl; //Muestra la rareza y el tipo de armadura al usuario
+	Consumable Trimate("Trimate","Healing",100, 1); //Crea un objeto de curación y sus atributos
+	cout << Trimate.get_type() << " " << Trimate.get_effect() << endl; //Muestra al usuario que tipo de objeto consumible es, y el porcentaje de efecto de este
+	EmoAcc ArksDance("Arks Dance","Emote", 0, 3, 27, 1, 1); //Crea un emote, subclase de consumible, y sus atributos
+	cout << ArksDance.get_type() << " " << ArksDance.get_index() << endl; //Muestra el tipo de consumible, y su ID de Emote
+	Disc SonicArrow("Sonic Arrow","Mel","Atk",30,2,5,0); //Crea un Disco de Arte de Fotón, sus requisitos de uso, y su nivel
+	cout << SonicArrow.get_name() << " Level " << SonicArrow.get_level() << endl; //Muestra al usuario el nombre del Arte de Fotón, y su nivel
 };
