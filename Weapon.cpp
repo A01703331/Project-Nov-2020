@@ -106,7 +106,7 @@ void Weapon::set_value(string type){
 		atribute.value = 6;
 	else if (type == "Katana")
 		atribute.value = 7;
-	else if (type == "Dual Blades")
+	else if (type == "Soaring Blades")
 		atribute.value = 8;
 	else if (type == "Gunblade")
 		atribute.value = 9;
