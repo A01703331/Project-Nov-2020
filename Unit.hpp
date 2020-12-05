@@ -1,3 +1,13 @@
+/** 
+ * José Sebastián Pedrero Jiménez
+ * A01703331
+ * 04/Diciembre/2020
+*/
+
+/**
+ * Clase Unit, contiene los atributos de un pedazo de armadura de PSO2
+*/
+
 #ifndef UNIT_HPP_
 #define UNIT_HPP_
 
@@ -6,8 +16,10 @@
 #include "Comp.hpp"
 using namespace std;
 
+// Declaración de la clase Unit que hereda de Storage
 class Unit : public Storage {
 	private:
+		//Variables de instancia
 		string part; //Parte de Armadura (Cuerpo, Brazos, Piernas)
 		string type_req; //Atributo requerido (Melee (Mel), Ranged (Rng), Technique (Tec), Dexterity (Dex))
 		string stat_req; //Característica requerida (Atk, Def, Dex no tiene)
@@ -15,9 +27,11 @@ class Unit : public Storage {
 		int defense; //Valor de la caracteristica principal
 		Composicion atribute;
 	public:
-		Unit(); //Llama al Default
-		Unit(string n, string p, string tr, string sr, int r, int rq, int d); //Integra los valores que se pongan al momento de definir la unidad
-		~Unit(){};
+		//Métodos
+		Unit(); //Constructor por default
+		Unit(string n, string p, string tr, string sr, int r, int rq, int d);
+		// ^Constructor que incorpora valores
+		~Unit(){}; //Destructor
 		//getters
 		string get_name();
 		string get_part();

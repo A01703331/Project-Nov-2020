@@ -1,3 +1,13 @@
+/** 
+ * José Sebastián Pedrero Jiménez
+ * A01703331
+ * 04/Diciembre/2020
+*/
+
+/**
+ * Clase Weapon, contiene los atributos de un arma de PSO2
+*/
+
 #ifndef WEAPON_HPP_
 #define WEAPON_HPP_
 
@@ -6,20 +16,23 @@
 #include "Comp.hpp"
 using namespace std;
 
+// Declaración de la clase Weapon que hereda de Storage
 class Weapon : public Storage  {
 	private:
-		string elem; //Elemento del Arma
-		string type; //Tipo de Arma (Espada, Pistola, Lanza...)
-		string type_req; //Atributo requerido (Melee (Mel), Ranged (Rng), Technique (Tec), Dexterity (Dex))
-		string stat_req; //Característica requerida (Atk, Def, Dex no tiene)
-		int req; //Valor del requisito (Limite de 1 a 1000)
-		int power; //Valor de la caracteristica principal
+		//Variables de instancia
+		string elem;
+		string type; 
+		string type_req;
+		string stat_req;
+		int req; 
+		int power; 
 		Composicion atribute;
 	public:
-		Weapon(); //Llama al default
+		//Métodos
+		Weapon(); //Constructor por default
 		Weapon(string n, string el, string tw, string tr, string sr, int r,
-		  int rq, int a); //Integra los valores que se pongan al momento de definir el arma
-		~Weapon(){};
+		  int rq, int a); // Constructor que incorpora valores
+		~Weapon(){}; // Destructor
 		//getters
 		string get_name();
 		string get_elem();

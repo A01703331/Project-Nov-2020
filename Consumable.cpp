@@ -1,6 +1,12 @@
+/** 
+ * José Sebastián Pedrero Jiménez
+ * A01703331
+ * 04/Diciembre/2020
+*/
+
 #include "Consumable.hpp"
 
-Consumable::Consumable(){ //Default
+Consumable::Consumable(){ //Constructor por default
 	atribute.name = "Monomate";
 	type = "Healing";
 	effect = 30;
@@ -11,7 +17,7 @@ Consumable::Consumable(string n, string tc, int ef, int r): type(tc), effect(ef)
 	atribute.name = n;
 	atribute.rarity;
 	set_value(type);
-};
+}; //Constructor que incorpora variables
 
 //Funciones de getters
 
@@ -77,11 +83,13 @@ void Consumable::set_value(string type) {
 		atribute.value = 24;
 	else if (type == "Emote")
 		atribute.value = 25;
+	else 
 		cout << "Invalid Consumable Type" << endl;
 }
 
 void Consumable::print(){
-	cout << atribute.name << type << effect << atribute.rarity << endl;
+	cout << atribute.name << " " << type << " " << effect << " " <<
+		    atribute.rarity << endl;
 }
 
 EmoAcc::EmoAcc(){ //Default
@@ -126,6 +134,7 @@ void EmoAcc::set_unlock_a(bool ua){
 };
 
 void EmoAcc::print() {
-	cout << atribute.name << type << effect << atribute.rarity << index
-		 << unlock << unlock_a << endl;
+	cout << atribute.name << " " << type << " " << effect << " "
+		 << atribute.rarity << " " << index << " " << unlock << 
+		 	unlock_a << endl;
 }

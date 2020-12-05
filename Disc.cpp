@@ -1,6 +1,12 @@
+/** 
+ * José Sebastián Pedrero Jiménez
+ * A01703331
+ * 04/Diciembre/2020
+*/
+
 #include "Disc.hpp"
 
-Disc::Disc(){ //Default
+Disc::Disc(){ //Constructor por default
 	atribute.name = "Rising Edge";
 	skill = "Mel";
 	stat_req = "Atk";
@@ -15,7 +21,7 @@ Disc::Disc(string n, string s, string sr, int rq, int r, int lv, bool c):
     atribute.name = n;
     atribute.rarity = r;
     set_value(skill);
-}
+} //Constructor que incorpora variables
 
 //Funciones de getters
 
@@ -89,15 +95,17 @@ void Disc::set_custom(bool c){
 };
 
 void Disc::set_value(string skill) {
-	if ((skill == "Mel") or (skill == "Melee"))
+	if ((skill == "Mel") || (skill == "Melee"))
 		atribute.value = 26;
-	else if ((skill == "Rng") or (skill == "Ranged"))
+	else if ((skill == "Rng") || (skill == "Ranged"))
 		atribute.value = 27;
-	else if ((skill == "Tec") or (skill == "Technique"))
+	else if ((skill == "Tec") || (skill == "Technique"))
 		atribute.value = 28;
+	else 
+		cout << "Invalid Disc Skill Type" << endl;
 }
 
 void Disc::print() {
-	cout << atribute.name << skill << stat_req << req << atribute.rarity
-	     << level << custom << endl;
+	cout << atribute.name << " " << skill << " " << stat_req << " " << req
+		 << atribute.rarity << " " << level << " " << custom << " " << endl;
 }

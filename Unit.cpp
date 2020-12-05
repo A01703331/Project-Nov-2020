@@ -1,6 +1,12 @@
+/** 
+ * José Sebastián Pedrero Jiménez
+ * A01703331
+ * 04/Diciembre/2020
+*/
+
 #include "Unit.hpp"
 
-Unit::Unit(){ //Default
+Unit::Unit(){ //Constructor por default
 	atribute.name = "Unit";
 	part = "Back";
 	type_req = "Mel";
@@ -16,9 +22,8 @@ Unit::Unit(string n, string p, string tr, string sr, int r, int rq,
 	atribute.name = n;
 	atribute.rarity = r;
 	set_value(part);
-}; //Integra los valores que se pongan al momento de definir la unidad
+}; //Constructor que incorpora valores
 		  
-
 //Funciones de getters
 
 string Unit::get_name(){
@@ -95,6 +100,6 @@ void Unit::set_value(string part) {
 }
 
 void Unit::print() {
-	cout << atribute.name << part << type_req << stat_req << atribute.rarity
-		 << req << defense << endl;
+	cout << atribute.name << " " << part << " " << type_req << " " << stat_req
+		 << req << " " << atribute.rarity << " " << defense << endl;
 }

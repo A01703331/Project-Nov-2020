@@ -1,3 +1,9 @@
+/** 
+ * José Sebastián Pedrero Jiménez
+ * A01703331
+ * 04/Diciembre/2020
+*/
+
 #ifndef DISC_HPP_
 #define DISC_HPP_
 
@@ -8,6 +14,7 @@ using namespace std;
 
 class Disc : public Storage {
 	private:
+		//Variables de instancia
 		string skill; //Tipo de Habilidad (Melee (Mel), Ranged (Rng), Technique (Tec))
 		string stat_req; //Característica Requerida (Atk, Def)
 		int req; //Valor del requisito
@@ -15,9 +22,11 @@ class Disc : public Storage {
 		bool custom; //Si el disco es customizado o no
 		Composicion atribute;
 	public:
-		Disc(); //Llama al Default
-		Disc(string n, string s, string sr, int rq, int r, int lv, bool c); //Integra los valores que se pongan al momento de definir el disco
-		~Disc(){};
+		//Métodos
+		Disc(); //Constructor por default
+		Disc(string n, string s, string sr, int rq, int r, int lv, bool c);
+		// ^Constructor que incorpora valores
+		~Disc(){};//Destructor
 		//getters
 		string get_name();
 		string get_skill();

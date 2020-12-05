@@ -1,6 +1,18 @@
+/** 
+ * José Sebastián Pedrero Jiménez
+ * A01703331
+ * 04/Diciembre/2020
+*/
+
 #include "Weapon.hpp"
 
-Weapon::Weapon(){ //Default
+/**
+ * Constructor por default
+ *
+ * @param
+ * @return Objeto Weapon
+*/
+Weapon::Weapon(){ 
 	atribute.name = "Sword";
 	elem = "";
 	type = "Sword";
@@ -11,86 +23,209 @@ Weapon::Weapon(){ //Default
 	power = 1;
 };
 
+/**
+ * Constructor que incorpora valores
+ *
+ * @param 
+ * string n: nombre de serie del arma
+ * string el: elemento del arma
+ * string tw: tipo de arma
+ * string tr: atributo requerido para equipar el arma
+ * string sr: caracteristica requerida para equipar el arma
+ * int r: rareza del arma
+ * int rq: valor de requisito
+ * int a: valor de ataque del arma
+ * @return Objeto Weapon
+*/
+
 Weapon::Weapon(string n, string el, string tw, string tr, string sr, int r,
 		  int rq, int a): elem(el), type(tw), type_req(tr),
 		  stat_req(sr), req(rq), power(a){
 	atribute.name = n; 
 	atribute.rarity = r;
 	set_value(type);
-}; //Integra los valores que se pongan al momento de definir el arma
+}; 
 		  
 //Funciones de getters
 
-string Weapon::get_name(){ //Regresa el nombre
+/**
+ * getter name
+ *
+ * @param
+ * @return string atribute.name: nombre del arma
+*/
+string Weapon::get_name(){ 
 	return atribute.name;
 }
 
-string Weapon::get_elem() { //Regresa el elemento
+/**
+ * getter elemento
+ *
+ * @param
+ * @return string elem: elemento del arma
+*/
+string Weapon::get_elem() {
 	return elem;
 }
 
-string Weapon::get_type() { //Regresa el tipo de arma
+/**
+ * getter tipo de arma
+ *
+ * @param 
+ * @return string type: tipo de arma
+*/
+string Weapon::get_type() {
 	return type;
 }
 
-string Weapon::get_type_req() { //Regresa el tipo de atributo requerido
+/**
+ * getter tipo de atributo requerido
+ *
+ * @param 
+ * @return string type: tipo de atributo
+*/
+string Weapon::get_type_req() {
 	return type_req;
 }
 
-string Weapon::get_stat_req() { //Regresa la característica requerida
+/**
+ * getter tipo de caracteristica requerida
+ *
+ * @param 
+ * @return string type: tipo de caracteristica
+*/
+string Weapon::get_stat_req() {
 	return stat_req;
 }
 
-int Weapon::get_rarity() { //Regresa la rareza
+/**
+ * getter rareza
+ *
+ * @param 
+ * @return int atribute.rarity: rareza
+*/
+int Weapon::get_rarity() {
 	return atribute.rarity;
 }
 
-int Weapon::get_req() { //Regresa el valor de la característica requerida (Mel Atk, Rng Atk, Dex, etc.)
+/**
+ * getter requisito
+ *
+ * @param 
+ * @return int req: requisito
+*/
+int Weapon::get_req() { 
 	return req;
 }
 
-int Weapon::get_power() { //Regresa el valor de ataque del arma
+/**
+ * getter power
+ *
+ * @param 
+ * @return int power: valor de ataque del arma
+*/
+int Weapon::get_power() { 
 	return power;
 }
 
+/**
+ * getter power
+ *
+ * @param 
+ * @return int power: valor de ataque del arma
+*/
 int Weapon::get_value() {
 	return atribute.value;
 }
 
 //Funciones de setters
 
-void Weapon::set_name(string n){ //Cambia el nombre
+/**
+ * setter name
+ *
+ * @param string n: nombre insertado
+ * @return string atribute.name: nombre del arma
+*/
+void Weapon::set_name(string n){
 	atribute.name = n;
 }
 
-void Weapon::set_elem(string el) { //Cambia el elemento
+/**
+ * setter elemento
+ *
+ * @param string el: elemento insertado
+ * @return string elem: elemento del arma
+*/
+void Weapon::set_elem(string el) { 
 	elem = el;
 }
 
-void Weapon::set_type(string tw) { //Cambia el tipo de arma
+/**
+ * setter tipo del arma
+ *
+ * @param string tw: tipo insertado
+ * @return string type: tipo de arma
+*/
+void Weapon::set_type(string tw) { 
 	type = tw;
 }
 
-void Weapon::set_type_req(string tr) { //Cambia el tipo de atributo requrido
+/**
+ * setter atributo requerido
+ *
+ * @param string tr: atributo insertado
+ * @return string type_req: atributo requerido
+*/
+void Weapon::set_type_req(string tr) {
 	type_req = tr;
 }
 
-void Weapon::set_stat_req(string sr) { //Cambia la característica requerida
+/**
+ * setter caracteristica requerida
+ *
+ * @param string sr: caracteristica insertada
+ * @return string stat_req: caracterisitca requerida
+*/
+void Weapon::set_stat_req(string sr) { 
 	stat_req = sr;
 }
 
-void Weapon::set_rarity(int r) { //Cambia la rareza
+/**
+ * setter rareza
+ *
+ * @param int r: nombre insertado
+ * @return int atribute.rarity: rareza del arma
+*/
+void Weapon::set_rarity(int r) { 
 	atribute.rarity = r;
 }
 
-void Weapon::set_req(int rq) { //Cambia el valor de la caracterpistica requerida
+/**
+ * setter requisito
+ *
+ * @param int rq: requisito insertado
+ * @return int req: requisito del arma
+*/
+void Weapon::set_req(int rq) {
 	req = rq;
 }
 
+/**
+ * setter power
+ *
+ * @param int a: valor de ataque insertado
+ * @return int power: valor de ataque del arma
+*/
 void Weapon::set_power(int a) { //Cambia el valor de ataque del arma
 	power = a;
 }
 
+/**
+ * setter valor del arma
+ *
+ * @param string type:  string type: tipo de arma
+ * @return int atribute.value: valor del objeto
+*/
 void Weapon::set_value(string type){
 	if (type == "Sword")
 		atribute.value = 1;
@@ -132,7 +267,9 @@ void Weapon::set_value(string type){
 		cout << "Invalid Weapon Type" << endl;
 }
 
+// Print que se llama al final de todo
 void Weapon::print() {
-	cout << atribute.name << elem << type << type_req << stat_req << req <<
-			power << endl;
+	cout << atribute.name << " " << elem << " "  << type << " "  << type_req
+		 << " " << stat_req << " "  << req << " "  << atribute.rarity << " "
+		 << power << endl;
 }

@@ -1,3 +1,13 @@
+/** 
+ * José Sebastián Pedrero Jiménez
+ * A01703331
+ * 04/Diciembre/2020
+*/
+
+/**
+ * Clase Weapon, contiene los atributos de un consumible de PSO2
+*/
+
 #ifndef CONSUMABLE_HPP_
 #define CONSUMABLE_HPP_
 
@@ -8,14 +18,17 @@ using namespace std;
 
 class Consumable : public Storage {
 	private:
+		//Variables de instancia
 		protected:
-		int effect; //Fuerza del efecto en % (Healing de 30, 60, ó 100 / Booster de 10, 25, 50, 75, 100, 150, 200, 250 ó 300)
+		int effect; 
 		Composicion atribute;
-		string type; //Objeto de curación, potenciador
+		string type;
 	public:
-		Consumable(); //Llama al Default
-		Consumable(string n, string tc, int ef, int r); //Integra los valores que se pongan al momento de definir el consumible
-		~Consumable(){};
+		//Métodos
+		Consumable();  //Constructor por default
+		Consumable(string n, string tc, int ef, int r);
+		// ^Constructor que incorpora valores 
+		~Consumable(){}; //Destructor
 		//getters
 		string get_name();
 		string get_type();
@@ -31,18 +44,24 @@ class Consumable : public Storage {
 		void print();
 };
 
-//Subclase
+/**
+ * Clase Weapon, contiene los atributos de un arma de PSO2
+*/
 
+// Declaración de la clase EmoAcc que hereda de Consumable
 class EmoAcc : public Consumable {
 	private:
+		//Variables de instancia
 		int index; //ID del Emote o Accesorio
 		bool unlock; //Estatus de desbloqueo (Personaje Actual)
 		bool unlock_a; //Estatus de desbloqueo (Cuenta)
 		
 	public:
-		EmoAcc(); //Llama al Default
-		EmoAcc(string n, string tc, int ef, int r, int id, bool u, bool ua); //Integra los valores que se pongan al momento de definir el emote/accesorio
-		~EmoAcc(){};
+		//Métodos
+		EmoAcc(); //Constructor por default
+		EmoAcc(string n, string tc, int ef, int r, int id, bool u, bool ua);
+		// ^Constructor que incorpora valores
+		~EmoAcc(){}; //Destructor
 		//getters
 		int get_index();
 		bool get_unlock();
