@@ -15,11 +15,11 @@ using namespace std;
 class Disc : public Storage {
 	private:
 		//Variables de instancia
-		string skill; //Tipo de Habilidad (Melee (Mel), Ranged (Rng), Technique (Tec))
-		string stat_req; //Característica Requerida (Atk, Def)
-		int req; //Valor del requisito
-		int level; //Nivel de la Habilidad
-		bool custom; //Si el disco es customizado o no
+		string skill; 
+		string stat_req; 
+		int req; 
+		int level; 
+		bool custom;
 		Composicion atribute;
 	public:
 		//Métodos

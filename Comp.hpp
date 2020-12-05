@@ -14,9 +14,9 @@ using namespace std;
 class Composicion {
 	public:
 		//Variables de instancia
-		string name; // Nombre del objeto
-		int value; // Valor del objeto
-		int rarity; // Rareza del objeto
+		string name; 
+		int value; 
+		int rarity;
 		Composicion() // Constructor
 		{
 			name = "";

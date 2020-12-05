@@ -35,6 +35,7 @@
 
 using namespace std;
 
+//Main
 int main(int argc, char** argv) {
 	Inventory dummy;
 	dummy.create_item();

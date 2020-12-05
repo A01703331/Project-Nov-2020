@@ -10,23 +10,28 @@
 #include "Consumable.hpp"
 #include "Disc.hpp"
 
+//Constructor por default
 Inventory::Inventory(){
 	int i;
 	for (i=0;i<50;i++)
 		inventory[i] = 0;
-} //Constructor por default
+} 
 
+//Destructor
 Inventory::~Inventory(){
 	int i;
 	for (i=0;i<50;i++)
 		if (inventory[i]!=NULL)
 			delete inventory[i];
-} //Destructor
+} 
 
 /**
  * Función que crea objetos basandose en el input del usuario,
  * llama a las funciones que crean objetos, y luego ordena
  * dependiendo del tipo de ordenamiento deseado
+ *
+ *@param inputs del usuario
+ *@return inventario creado y ordenado
 */
 void Inventory::create_item(){
 	int i, t;
@@ -136,7 +141,7 @@ void Inventory::sort_rarity(){
  * lo inserta en el ïndice que recibe
  * 
  *@param int i: indice al que se incorpora
- *@return
+ *@return objeto Weapon
  */
 void Inventory::create_weapon(int i){
 	string n, el, tw, tr, sr;
@@ -169,7 +174,7 @@ void Inventory::create_weapon(int i){
  * lo inserta en el ïndice que recibe
  * 
  *@param int i: indice al que se incorpora
- *@return
+ *@return objeto Unit
  */
 void Inventory::create_unit(int i){
 	string n, p, tr, sr;
@@ -200,7 +205,7 @@ void Inventory::create_unit(int i){
  * lo inserta en el ïndice que recibe
  * 
  *@param int i: indice al que se incorpora
- *@return
+ *@return objeto Consumable
  */
 void Inventory::create_consumable(int i){
 	string n, tc;
@@ -225,7 +230,7 @@ void Inventory::create_consumable(int i){
  * lo inserta en el ïndice que recibe
  * 
  *@param int i: indice al que se incorpora
- *@return
+ *@return objeto EmoAcc
  */
 void Inventory::create_emoacc(int i){
 	string n, tc;
@@ -255,6 +260,13 @@ void Inventory::create_emoacc(int i){
 	inventory[i] = (Storage *)temp;
 }
 
+/**
+ * crear disc, crea un objeto disc con los atributos que el usuario pone y
+ * lo inserta en el ïndice que recibe
+ * 
+ *@param int i: indice al que se incorpora
+ *@return objeto Disc
+ */
 void Inventory::create_disc(int i){
 	string n, s, sr;
 	int rq, r, lv;
@@ -283,7 +295,7 @@ void Inventory::create_disc(int i){
  * print, imprime el inventario dependiendo del tipo de sorteo
  * 
  *@param int i: indice del objeto
- *@return
+ *@return inventario en consola
  */
 void Inventory::print_inv(int sort){
 	int i;

@@ -52,9 +52,9 @@ class Consumable : public Storage {
 class EmoAcc : public Consumable {
 	private:
 		//Variables de instancia
-		int index; //ID del Emote o Accesorio
-		bool unlock; //Estatus de desbloqueo (Personaje Actual)
-		bool unlock_a; //Estatus de desbloqueo (Cuenta)
+		int index;
+		bool unlock; 
+		bool unlock_a;
 		
 	public:
 		//Métodos

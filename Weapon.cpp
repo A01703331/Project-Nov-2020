@@ -24,7 +24,7 @@ Weapon::Weapon(){
 };
 
 /**
- * Constructor que incorpora valores
+ * Constructor que incorpora variables
  *
  * @param 
  * string n: nombre de serie del arma
@@ -129,10 +129,10 @@ int Weapon::get_power() {
 }
 
 /**
- * getter power
+ * getter valor
  *
  * @param 
- * @return int power: valor de ataque del arma
+ * @return int atribute.value: valor del objeto
 */
 int Weapon::get_value() {
 	return atribute.value;
@@ -193,7 +193,7 @@ void Weapon::set_stat_req(string sr) {
 /**
  * setter rareza
  *
- * @param int r: nombre insertado
+ * @param int r: rareza insertada
  * @return int atribute.rarity: rareza del arma
 */
 void Weapon::set_rarity(int r) { 
@@ -223,7 +223,7 @@ void Weapon::set_power(int a) { //Cambia el valor de ataque del arma
 /**
  * setter valor del arma
  *
- * @param string type:  string type: tipo de arma
+ * @param string type:  tipo de arma
  * @return int atribute.value: valor del objeto
 */
 void Weapon::set_value(string type){
